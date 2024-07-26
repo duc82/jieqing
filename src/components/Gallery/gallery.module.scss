@@ -1,0 +1,37 @@
+@import "@/assets/styles/container";
+@import "@/assets/styles/breakpoints";
+
+.gallery {
+  @include media-breakpoint-up($sm) {
+    @include container;
+  }
+
+  .gallery_images {
+    display: flex;
+    align-items: center;
+    margin-bottom: 100px;
+
+    img {
+      &:first-child {
+        width: 60%;
+      }
+
+      &:last-child {
+        margin-left: -20px;
+        width: calc(40% + 20px);
+        border: 10px solid white;
+      }
+    }
+  }
+
+  .gallery_description {
+    text-align: center;
+    line-height: 30px;
+    margin-bottom: 100px;
+
+    .gallery_chinese {
+      font-family: "Noto Sans SC", sans-serif;
+      margin-bottom: 20px;
+    }
+  }
+}

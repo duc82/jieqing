@@ -1,33 +1,51 @@
 import { ChangeEvent, useEffect, useRef, useState } from "react";
-import styles from "./_hero.module.scss";
-import hero from "@/assets/images/hero.jpg";
+import styles from "./hero.module.scss";
+import hero from "@/assets/images/hero.webp";
 import clsx from "clsx";
 import wedding from "@/assets/audios/wedding.mp3";
 import SoundWave from "../UI/SoundWave";
-import track from "@/assets/images/track.jpg";
+import track from "@/assets/images/track.webp";
+import AudioButton from "../UI/AudioButton";
+import useTimeContext from "@/hooks/useTimeContext";
+import { getDates, getMonths, getYears } from "@/utils/time";
 
 export default function Hero() {
   const [trackTime, setTrackTime] = useState(0); // in seconds
-  const [isPlayingTrack, setIsPlayingTrack] = useState(true);
   const [inputRangeValue, setInputRangeValue] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const time = useTimeContext();
   const audioRef = useRef<HTMLAudioElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleToggleAudio = () => {
+  const handleToggleAudio = async (): Promise<void> => {
     const audio = audioRef.current;
     if (!audio) return;
 
     if (audio.paused) {
-      audio.play();
+      await handlePlayAudio();
     } else {
-      audio.pause();
+      handlePauseAudio();
     }
   };
 
-  const handleAudioTimeUpdate = async (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChangeAudioTime = (e: ChangeEvent<HTMLInputElement>) => {
     const audio = audioRef.current;
     if (!audio) return;
     audio.currentTime = +e.target.value;
+  };
+
+  const handlePauseAudio = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.pause();
+    setIsPlaying(false);
+  };
+
+  const handlePlayAudio = async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    await audio.play();
+    setIsPlaying(true);
   };
 
   useEffect(() => {
@@ -59,8 +77,11 @@ export default function Hero() {
         </span>
       </h6>
       <p className={styles.hero_sub_title}>
-        <span>邓青芳 & 葛委朋</span>
-        <span>2024.07.20</span>
+        <span>葛委朋 & 邓青芳</span>
+        <span>
+          {getYears(time)}.{getMonths(time).toString().padStart(2, "0")}.
+          {getDates(time).toString().padStart(2, "0")}
+        </span>
       </p>
 
       <div className={styles.hero_description}>
@@ -69,9 +90,7 @@ export default function Hero() {
       </div>
 
       <div className={styles.hero_image_group}>
-        <div
-          className={clsx(styles.hero_image, isPlayingTrack && styles.running)}
-        >
+        <div className={clsx(styles.hero_image, isPlaying && styles.running)}>
           <img src={hero} alt="Hero" />
         </div>
         {/* <p className={styles.hero_text_top}>就是爱你</p> */}
@@ -86,7 +105,8 @@ export default function Hero() {
 
       <div className={styles.hero_track}>
         <div className={styles.hero_track_left}>
-          <b>给你给我</b>
+          <b>给你给我 - 毛不易</b>
+          <label htmlFor="trackRange" hidden></label>
           <input
             type="range"
             id="trackRange"
@@ -94,20 +114,20 @@ export default function Hero() {
             value={trackTime}
             min={0}
             step={1}
-            max={audioRef.current?.duration || 0}
-            onChange={handleAudioTimeUpdate}
-            onMouseDown={() => audioRef.current?.pause()}
-            onMouseUp={() => audioRef.current?.play()}
+            max={audioRef.current?.duration ?? 0}
+            onChange={handleChangeAudioTime}
+            onMouseDown={handlePauseAudio}
+            onMouseUp={handlePlayAudio}
             style={{
               background: `linear-gradient(to right, rgb(135, 135, 135) 0%, rgb(135, 135, 135) ${inputRangeValue}%, rgb(205, 205, 205) ${inputRangeValue}%, rgb(205, 205, 205) 100%`,
             }}
           />
 
-          <p>已为您自动播放音乐~</p>
+          <p>{isPlaying ? "音乐在运行" : "音乐关闭了"} ...</p>
         </div>
 
         <div className={styles.hero_track_right}>
-          <audio ref={audioRef} loop autoPlay>
+          <audio ref={audioRef} loop>
             <source src={wedding} type="audio/mp3" />
           </audio>
 
@@ -117,7 +137,11 @@ export default function Hero() {
             className={styles.hero_track_image}
           />
 
-          <SoundWave active={isPlayingTrack} />
+          <SoundWave active={isPlaying} />
+          <AudioButton
+            onToggleAudio={handleToggleAudio}
+            isPlaying={isPlaying}
+          />
         </div>
       </div>
     </section>

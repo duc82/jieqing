@@ -11,23 +11,23 @@ export default function SoundWave({ width, height, active }: SoundWaveProps) {
   return (
     <div className={styles.wave_container} style={{ height }}>
       <div
-        className={clsx(styles.wave, active && styles.active)}
+        className={clsx(styles.wave, active && styles.running)}
         style={{ width }}
       ></div>
       <div
-        className={clsx(styles.wave, active && styles.active)}
+        className={clsx(styles.wave, active && styles.running)}
         style={{ width }}
       ></div>
       <div
-        className={clsx(styles.wave, active && styles.active)}
+        className={clsx(styles.wave, active && styles.running)}
         style={{ width }}
       ></div>
       <div
-        className={clsx(styles.wave, active && styles.active)}
+        className={clsx(styles.wave, active && styles.running)}
         style={{ width }}
       ></div>
       <div
-        className={clsx(styles.wave, active && styles.active)}
+        className={clsx(styles.wave, active && styles.running)}
         style={{ width }}
       ></div>
     </div>

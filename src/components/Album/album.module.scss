@@ -1,0 +1,67 @@
+@import "@/assets/styles/container";
+@import "@/assets/styles/breakpoints";
+
+.album {
+  @extend .container;
+
+  .album_items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 50px;
+    justify-content: center;
+
+    @include media-breakpoint-up($md) {
+      flex-direction: row;
+    }
+
+    .album_item {
+      a {
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .album_item_content {
+        margin-top: 20px;
+        p {
+          letter-spacing: normal;
+          margin-bottom: 10px;
+          &.album_content_chinese {
+            line-height: 30px;
+            margin-bottom: 20px;
+            text-align: center;
+            letter-spacing: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  .album_content {
+    margin: 0 auto;
+    margin-bottom: 100px;
+    p {
+      letter-spacing: normal;
+      &.album_content_chinese {
+        line-height: 30px;
+        margin-bottom: 20px;
+        text-align: center;
+        letter-spacing: 2px;
+      }
+
+      &.quotation_mark {
+        text-align: left;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: normal;
+        margin-bottom: 10px;
+
+        &.closed {
+          text-align: right;
+        }
+      }
+    }
+  }
+}

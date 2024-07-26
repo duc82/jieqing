@@ -1,0 +1,100 @@
+@import "@/assets/styles/container";
+@import "@/assets/styles/breakpoints";
+@import "@/assets/styles/animations";
+
+.calendar {
+  background-image: url("@/assets/images/background.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  color: white;
+  padding: 120px 0;
+  margin-bottom: 100px;
+
+  .calendar_overlay {
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .calendar_container {
+    @extend .container;
+    max-width: 300px;
+    position: relative;
+
+    @include media-breakpoint-up($sm) {
+      max-width: 576px;
+    }
+
+    @include media-breakpoint-up($lg) {
+      font-size: 18px;
+    }
+
+    .calendar_header {
+      display: flex;
+      align-items: center;
+      max-width: 220px;
+      margin: 0 auto;
+      margin-bottom: 20px;
+
+      @include media-breakpoint-up($sm) {
+        max-width: 400px;
+      }
+
+      .calendar_month {
+        font-size: 36px;
+        margin-right: 16px;
+      }
+
+      .calendar_center {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+
+    .calendar_body {
+      .calendar_chinese {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        font-family: "Noto Sans SC", sans-serif;
+        margin-bottom: 40px;
+      }
+
+      .calendar_days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        row-gap: 20px;
+
+        .calendar_day {
+          &:first-child {
+            grid-column: span 6 / span 6;
+          }
+
+          &.active {
+            position: relative;
+
+            span {
+              position: relative;
+              z-index: 1;
+            }
+
+            .heart_wrapper {
+              position: absolute;
+              top: -8px;
+              left: -8px;
+
+              svg {
+                animation: beatingHeart 1.3s ease-in-out infinite;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

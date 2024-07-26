@@ -6,13 +6,14 @@
   height: 24px;
 
   .wave {
-    height: 100%;
     width: 6px;
     background: black;
     margin-right: 2px;
+    animation: upDown 1.2s linear infinite;
+    animation-play-state: paused;
 
-    &.active {
-      animation: upDown 1.2s linear infinite;
+    &.running {
+      animation-play-state: running;
     }
 
     @for $i from 1 through 5 {

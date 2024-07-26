@@ -1,0 +1,70 @@
+@import "@/assets/styles/container";
+@import "@/assets/styles/breakpoints";
+
+.message {
+  @include container;
+  max-width: 300px;
+  font-family: "Noto Sans SC", sans-serif;
+  margin-bottom: 100px;
+
+  @include media-breakpoint-up($lg) {
+    max-width: 400px;
+  }
+
+  .message_form {
+    margin-bottom: 100px;
+    .message_group_input {
+      margin-bottom: 40px;
+      input {
+        width: 100%;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 6px;
+        text-align: center;
+        outline: none;
+        font-size: 16px;
+        font-weight: 700;
+        color: rgb(50, 50, 50);
+
+        &::placeholder {
+          color: inherit;
+        }
+      }
+    }
+
+    .message_form_button {
+      width: 100%;
+      border: 1px solid black;
+      background-color: rgb(20, 20, 20);
+      border-radius: 5px;
+      padding: 6px;
+      text-align: center;
+      outline: none;
+      font-size: 16px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+
+      &:hover {
+        background-color: black;
+      }
+    }
+  }
+
+  .message_note {
+    line-height: 30px;
+    .message_note_title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .message_note_list {
+      list-style-type: decimal;
+      list-style-position: inside;
+
+      li {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

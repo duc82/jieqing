@@ -1,0 +1,30 @@
+@import "@/assets/styles/container";
+@import "@/assets/styles/breakpoints";
+
+.footer {
+  @include container;
+
+  div {
+    margin-bottom: 40px;
+    a {
+      display: flex;
+      justify-content: center;
+    }
+
+    img {
+      object-fit: cover;
+      width: 100%;
+
+      @include media-breakpoint-up($sm) {
+        width: 60%;
+      }
+    }
+  }
+
+  .footer_desc {
+    text-align: center;
+    font-family: "Noto Sans SC";
+    line-height: 30px;
+    margin-bottom: 40px;
+  }
+}
