@@ -157,6 +157,14 @@
   font-weight: 900;
 }
 
+// Apple Color Emoji font
+@font-face {
+  font-family: "Apple Color Emoji";
+  src: url("../fonts/AppleColorEmoji/AppleColorEmoji.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -164,6 +172,10 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", "Apple Color Emoji", sans-serif;
   letter-spacing: 2px;
+}
+
+.letter-normal {
+  letter-spacing: normal;
 }

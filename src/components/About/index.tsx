@@ -12,21 +12,18 @@ export default function About() {
       <div className={styles.about_items}>
         <div className={styles.about_item}>
           <img src={groom} alt="Groom" loading="lazy" />
+          <p>
+            Groom <span className={styles.about_item_icon}>🇨🇳</span>
+          </p>
+          <p>{"< 葛委朋 >"}</p>
         </div>
         <Heart />
         <div className={styles.about_item}>
           <img src={bride} alt="Bride" loading="lazy" />
-        </div>
-      </div>
-
-      <div className={styles.about_descriptions}>
-        <div className={styles.about_description}>
-          <p>Groom</p>
-          <p>{"< 葛委朋 >"}</p>
-        </div>
-        <div className={styles.about_description}>
-          <p>Bride</p>
-          <p>{"< 邓青芳 >"}</p>
+          <p>
+            Bride <span className={styles.about_item_icon}>🇻🇳</span>
+          </p>
+          <p className="letter-normal">{"< ĐẶNG THANH PHƯƠNG >"}</p>
         </div>
       </div>
     </section>

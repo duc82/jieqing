@@ -77,7 +77,10 @@ export default function Hero() {
         </span>
       </h6>
       <p className={styles.hero_sub_title}>
-        <span>葛委朋 & 邓青芳</span>
+        <span>
+          葛委朋 & <span className="letter-normal">ĐẶNG THANH PHƯƠNG</span>{" "}
+          (邓青芳)
+        </span>
         <span>
           {getYears(time)}.{getMonths(time).toString().padStart(2, "0")}.
           {getDates(time).toString().padStart(2, "0")}
