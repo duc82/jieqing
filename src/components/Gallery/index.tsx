@@ -1,6 +1,6 @@
 import styles from "./gallery.module.scss";
-import album7 from "@/assets/images/album7.jpg";
-import album8 from "@/assets/images/album8.jpg";
+import album7 from "@/assets/images/album7.webp";
+import album8 from "@/assets/images/album8.webp";
 
 export default function Gallery() {
   return (
