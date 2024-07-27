@@ -23,7 +23,6 @@
 
   .calendar_container {
     @extend .container;
-    max-width: 300px;
     position: relative;
 
     @include media-breakpoint-up($sm) {
@@ -58,10 +57,12 @@
     }
 
     .calendar_body {
+      text-align: center;
       .calendar_chinese {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
         font-family: "Noto Sans SC", sans-serif;
+        font-size: 18px;
         margin-bottom: 40px;
       }
 
@@ -86,7 +87,9 @@
             .heart_wrapper {
               position: absolute;
               top: -8px;
-              left: -8px;
+              left: 50%;
+
+              transform: translateX(-50%);
 
               svg {
                 animation: beatingHeart 1.3s ease-in-out infinite;

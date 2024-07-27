@@ -90,7 +90,7 @@
 @font-face {
   font-family: "Challista";
   src: url("../fonts/Challista/Challista.ttf") format("truetype");
-  font-style: normal;
+  font-weight: normal;
 }
 
 // Noto Sans SC font
@@ -98,63 +98,63 @@
   font-family: "Noto Sans SC";
   src: url("../fonts/Noto_Sans_SC/static/NotoSansSC-Thin.ttf")
     format("truetype");
-  font-style: 100;
+  font-weight: 100;
 }
 
 @font-face {
   font-family: "Noto Sans SC";
   src: url("../fonts/Noto_Sans_SC/static/NotoSansSC-ExtraLight.ttf")
     format("truetype");
-  font-style: 200;
+  font-weight: 200;
 }
 
 @font-face {
   font-family: "Noto Sans SC";
   src: url("../fonts/Noto_Sans_SC/static/NotoSansSC-Light.ttf")
     format("truetype");
-  font-style: 300;
+  font-weight: 300;
 }
 
 @font-face {
   font-family: "Noto Sans SC";
   src: url("../fonts/Noto_Sans_SC/static/NotoSansSC-Regular.ttf")
     format("truetype");
-  font-style: 400;
+  font-weight: 400;
 }
 
 @font-face {
   font-family: "Noto Sans SC";
   src: url("../fonts/Noto_Sans_SC/static/NotoSansSC-Medium.ttf")
     format("truetype");
-  font-style: 500;
+  font-weight: 500;
 }
 
 @font-face {
   font-family: "Noto Sans SC";
   src: url("../fonts/Noto_Sans_SC/static/NotoSansSC-SemiBold.ttf")
     format("truetype");
-  font-style: 600;
+  font-weight: 600;
 }
 
 @font-face {
   font-family: "Noto Sans SC";
   src: url("../fonts/Noto_Sans_SC/static/NotoSansSC-Bold.ttf")
     format("truetype");
-  font-style: 700;
+  font-weight: 700;
 }
 
 @font-face {
   font-family: "Noto Sans SC";
   src: url("../fonts/Noto_Sans_SC/static/NotoSansSC-ExtraBold.ttf")
     format("truetype");
-  font-style: 800;
+  font-weight: 800;
 }
 
 @font-face {
   font-family: "Noto Sans SC";
   src: url("../fonts/Noto_Sans_SC/static/NotoSansSC-Black.ttf")
     format("truetype");
-  font-style: 900;
+  font-weight: 900;
 }
 
 * {

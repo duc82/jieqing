@@ -106,7 +106,9 @@ export default function Hero() {
       <div className={styles.hero_track}>
         <div className={styles.hero_track_left}>
           <b>给你给我 - 毛不易</b>
-          <label htmlFor="trackRange" hidden></label>
+          <label htmlFor="trackRange" style={{ display: "none" }}>
+            Track Range
+          </label>
           <input
             type="range"
             id="trackRange"
