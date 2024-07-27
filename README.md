@@ -1,4 +1,4 @@
-# Wedding Invitation Card
+# Jieqing
 
 This is a simple wedding invitation card template created using React and TypeScript with Vite.
 
@@ -11,8 +11,8 @@ This is a simple wedding invitation card template created using React and TypeSc
 
 ## Live Demo
 
-[Live Demo](https://wedding-invitation-pro.vercel.app/)
+[Live Demo](https://jieqing.vercel.app/)
 
 ## License
 
-wedding-invitation-card is licensed under the MIT license. [MIT License](http://opensource.org/licenses/MIT)
+jiequing is licensed under the MIT license. [MIT License](http://opensource.org/licenses/MIT)
