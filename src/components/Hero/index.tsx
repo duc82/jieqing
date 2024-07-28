@@ -132,7 +132,7 @@ export default function Hero() {
         </div>
 
         <div className={styles.hero_track_right}>
-          <audio ref={audioRef} loop>
+          <audio ref={audioRef} loop preload="metadata">
             <source src={wedding} type="audio/mp3" />
           </audio>
 

@@ -89,7 +89,8 @@
 // Challista font
 @font-face {
   font-family: "Challista";
-  src: url("../fonts/Challista/Challista.ttf") format("truetype");
+  src: url("../fonts/Challista/Challista.ttf") format("truetype"),
+    url("../fonts/Challista/Challista.otf") format("opentype");
   font-weight: normal;
 }
 
@@ -160,9 +161,11 @@
 // Apple Color Emoji font
 @font-face {
   font-family: "Apple Color Emoji";
-  src: url("../fonts/AppleColorEmoji/AppleColorEmoji.ttf") format("truetype");
+  src: url("../fonts/AppleColorEmoji/AppleColorEmoji-subset.ttf")
+    format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 * {
