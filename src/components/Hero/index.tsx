@@ -51,6 +51,7 @@ export default function Hero() {
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
+
     audio.ontimeupdate = () => {
       setTrackTime(audio.currentTime);
 
@@ -132,7 +133,7 @@ export default function Hero() {
         </div>
 
         <div className={styles.hero_track_right}>
-          <audio ref={audioRef} loop preload="metadata">
+          <audio ref={audioRef} loop>
             <source src={wedding} type="audio/mp3" />
           </audio>
 

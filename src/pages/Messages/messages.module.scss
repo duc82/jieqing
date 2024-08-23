@@ -1,0 +1,45 @@
+@import "@/assets/styles/container";
+
+.admin {
+  @extend .container;
+  letter-spacing: normal;
+
+  button {
+    padding: 8px;
+    background-color: rgb(255, 38, 38);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    font-size: 14px;
+    transition: background-color 0.15s ease-in-out;
+
+    &:hover {
+      background-color: rgb(226, 27, 27);
+    }
+  }
+
+  .admin_title {
+    margin: 20px 0;
+  }
+
+  .admin_delete {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+  }
+
+  .admin_table {
+    width: 100%;
+    border-collapse: collapse;
+
+    td,
+    th {
+      border: 1px solid black;
+      text-align: center;
+      padding: 10px;
+    }
+  }
+}

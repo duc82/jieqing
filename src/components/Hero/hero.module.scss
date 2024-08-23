@@ -10,8 +10,10 @@
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 14px;
-    @include media-breakpoint-up($lg) {
-      text-align: center;
+    & {
+      @include media-breakpoint-up($lg) {
+        text-align: center;
+      }
     }
 
     .hero_title_chinese {
@@ -23,17 +25,29 @@
 
   .hero_sub_title {
     margin-bottom: 50px;
+
     @include media-breakpoint-up($lg) {
       text-align: center;
     }
 
     & > span:first-child {
-      margin-right: 60px;
+      display: block;
+      margin-bottom: 10px;
       color: rgb(33, 87, 167);
+      @include media-breakpoint-up($sm) {
+        display: inline-block;
+        margin-right: 60px;
+        margin-bottom: 0;
+      }
     }
 
     & > span:nth-child(2) {
       color: rgb(100, 100, 100);
+
+      @include media-breakpoint-down($sm) {
+        display: block;
+        text-align: center;
+      }
     }
   }
 

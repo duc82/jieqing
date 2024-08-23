@@ -1,36 +1,75 @@
+import { FormEvent } from "react";
 import styles from "./message.module.scss";
 
 export default function Message() {
+  const handleSendMessage = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      const name = e.currentTarget.fullName.value;
+      const phone = e.currentTarget.phone.value;
+      const attendances = e.currentTarget.attendances.value;
+      const createdAt = new Date().toISOString();
+
+      if (!name || !phone || !attendances) {
+        return alert("请填写完整信息");
+      }
+
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/messages`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          phone,
+          attendances,
+          createdAt,
+        }),
+      });
+
+      if (!res.ok) {
+        return alert("发送失败");
+      }
+
+      alert("发送成功");
+
+      (e.target as HTMLFormElement & EventTarget).reset();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <section className={styles.message}>
-      <form className={styles.message_form}>
+      <form className={styles.message_form} onSubmit={handleSendMessage}>
         <div className={styles.message_group_input}>
-          <label htmlFor="name" hidden></label>
+          <label htmlFor="fullName" hidden></label>
           <input
             type="text"
-            id="name"
-            name="name"
+            id="fullName"
+            name="fullName"
             placeholder="姓名"
             autoComplete="off"
             autoCorrect="off"
           />
         </div>
         <div className={styles.message_group_input}>
-          <label htmlFor="name" hidden></label>
+          <label htmlFor="phone" hidden></label>
           <input
             type="text"
-            id="name"
-            name="name"
+            id="phone"
+            name="phone"
             placeholder="手机"
             autoComplete="off"
           />
         </div>
         <div className={styles.message_group_input}>
-          <label htmlFor="name" hidden></label>
+          <label htmlFor="attendances" hidden></label>
           <input
             type="text"
-            id="name"
-            name="name"
+            id="attendances"
+            name="attendances"
             placeholder="出席人数"
             autoComplete="off"
           />
