@@ -11,7 +11,9 @@ This is a simple wedding invitation card template created using React and TypeSc
 
 ## Live Demo
 
-[Live Demo](https://jieqing.onrender.com/)
+[Vercel](https://jieqing.vercel.app/)
+[Render](https://jieqing.onrender.com/)
+[Netlify](https://jieqing.netlify.app/)
 
 ## License
 
