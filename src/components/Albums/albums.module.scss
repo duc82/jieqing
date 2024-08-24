@@ -26,6 +26,13 @@
 
     .album_item {
       position: relative;
+      overflow: hidden;
+
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+      }
 
       .album_last {
         position: absolute;
@@ -36,6 +43,11 @@
         justify-content: center;
         color: white;
         font-size: 32px;
+        z-index: 1;
+
+        & + img {
+          transform: scale(1);
+        }
 
         @include media-breakpoint-up($md) {
           font-size: 40px;
@@ -48,6 +60,7 @@
         border-radius: 8px;
         aspect-ratio: 1/1;
         object-position: center;
+        transition: transform 0.3s;
       }
     }
   }
