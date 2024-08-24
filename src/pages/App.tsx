@@ -1,3 +1,4 @@
+import Albums from "@/components/Albums";
 import About from "../components/About";
 import Album from "../components/Album";
 import Calendar from "../components/Calendar";
@@ -19,6 +20,7 @@ export default function App() {
       <Calendar />
       <Detail />
       <Gallery />
+      <Albums />
       <Message />
       <Footer />
     </TimeProvider>

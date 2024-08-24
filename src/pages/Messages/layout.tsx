@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 
-const password = "dengqingfang";
-
 export default function MessagesLayout() {
   const [isCorrect, setIsCorrect] = useState(false);
 
   useEffect(() => {
+    const password = "dengqingfang";
     if (localStorage.getItem("password") === password) {
       setIsCorrect(true);
       return;

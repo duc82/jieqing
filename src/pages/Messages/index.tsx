@@ -127,52 +127,56 @@ export default function Messages() {
           <p>Selected {selectedMessages.size} records</p>
         </div>
       )}
-
-      <table className={styles.admin_table}>
-        <thead>
-          <tr>
-            <th>
-              <input
-                type="checkbox"
-                id="selectAll"
-                name="selectAll"
-                onChange={handleSelectAll}
-                ref={selectedAllRef}
-              />
-            </th>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Phone</th>
-            <th>Attendances</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {messages.map((message) => (
-            <tr key={message.id}>
-              <td>
+      <div style={{ overflowX: "auto" }}>
+        <table className={styles.admin_table}>
+          <thead>
+            <tr>
+              <th>
                 <input
                   type="checkbox"
-                  id={message.id}
-                  name={message.id}
-                  checked={Boolean(selectedMessages.get(message.id))}
-                  onChange={handleSelect}
+                  id="selectAll"
+                  name="selectAll"
+                  onChange={handleSelectAll}
+                  ref={selectedAllRef}
                 />
-              </td>
-              <td>{message.id}</td>
-              <td>{message.name}</td>
-              <td>{message.phone}</td>
-              <td>{message.attendances}</td>
-              <td>
-                <button type="button" onClick={() => handleDelete(message.id)}>
-                  Delete
-                </button>
-              </td>
+              </th>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Attendances</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+
+          <tbody>
+            {messages.map((message) => (
+              <tr key={message.id}>
+                <td>
+                  <input
+                    type="checkbox"
+                    id={message.id}
+                    name={message.id}
+                    checked={Boolean(selectedMessages.get(message.id))}
+                    onChange={handleSelect}
+                  />
+                </td>
+                <td>{message.id}</td>
+                <td>{message.name}</td>
+                <td>{message.phone}</td>
+                <td>{message.attendances}</td>
+                <td>
+                  <button
+                    type="button"
+                    onClick={() => handleDelete(message.id)}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

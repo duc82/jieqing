@@ -4,7 +4,6 @@
 .message {
   @include container;
   max-width: 300px;
-  font-family: "Noto Sans SC", sans-serif;
   margin-bottom: 100px;
 
   @include media-breakpoint-up($lg) {
@@ -56,6 +55,7 @@
     .message_note_title {
       text-align: center;
       margin-bottom: 40px;
+      font-weight: 600;
     }
 
     .message_note_list {
