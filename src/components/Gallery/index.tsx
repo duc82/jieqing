@@ -15,8 +15,8 @@ export default function Gallery() {
           生命是一场奇妙的旅程 <br /> 你是途中最美的遇见
         </p>
         <p className={styles.gallery_english}>
-          Your knight is in position,
-          <br /> gun and rose, ready for the princess.
+          Life is a wonderful journey <br></br> you are the most beautiful
+          encounter along the way.
         </p>
       </div>
     </section>

@@ -1,28 +1,26 @@
 import styles from "./albums.module.scss";
-import dsc6544 from "@/assets/images/albums/DSC_6544.jpg";
-import dsc6607 from "@/assets/images/albums/DSC_6607.jpg";
-import dsc6680 from "@/assets/images/albums/DSC_6680.jpg";
-import dsc6710 from "@/assets/images/albums/DSC_6710.jpg";
-import dsc6839 from "@/assets/images/albums/DSC_6839.jpg";
-import dsc7009 from "@/assets/images/albums/DSC_7009.jpg";
-import dsc7123 from "@/assets/images/albums/DSC_7123.jpg";
-import dsc7140 from "@/assets/images/albums/DSC_7140.jpg";
-import dsc7156 from "@/assets/images/albums/DSC_7156.jpg";
-import dsc7163 from "@/assets/images/albums/DSC_7163.jpg";
+import album_1 from "@/assets/images/albums/album_1_webp.webp";
+import album_2 from "@/assets/images/albums/album_2_webp.webp";
+import album_3 from "@/assets/images/albums/album_3_webp.webp";
+import album_4 from "@/assets/images/albums/album_4_webp.webp";
+import album_5 from "@/assets/images/albums/album_5_webp.webp";
+import album_6 from "@/assets/images/albums/album_6_webp.webp";
+import album_7 from "@/assets/images/albums/album_7_webp.webp";
+import album_8 from "@/assets/images/albums/album_8_webp.webp";
+import album_9 from "@/assets/images/albums/album_9_webp.webp";
 import Fancybox from "../UI/Fancybox";
 
 export default function Albums() {
   const albums = [
-    dsc6544,
-    dsc6607,
-    dsc6680,
-    dsc6710,
-    dsc6839,
-    dsc7009,
-    dsc7123,
-    dsc7140,
-    dsc7156,
-    dsc7163,
+    album_1,
+    album_2,
+    album_3,
+    album_4,
+    album_5,
+    album_6,
+    album_7,
+    album_8,
+    album_9,
   ];
 
   const newAlbums = albums.slice(0, 9);
@@ -41,7 +39,7 @@ export default function Albums() {
             key={index}
             className={styles.album_item}
           >
-            {index === newAlbums.length - 1 && (
+            {index === newAlbums.length - 1 && albums.length > 9 && (
               <div className={styles.album_last}>+{otherAlbums.length}</div>
             )}
             <img src={album} alt={`album-${index}`} loading="lazy" />

@@ -25,7 +25,7 @@ export default function Detail() {
           {getDates(time).toString().padStart(2, "0")}日{" "}
           {getHours(time).toString().padStart(2, "0")}时
           {getMinutes(time).toString().padStart(2, "0")}分 <br />{" "}
-          农历：冬月十五（星期日）
+          农历：十月十四（星期四）
         </p>
       </div>
       <div className={styles.detail_content}>

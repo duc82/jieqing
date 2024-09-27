@@ -1,10 +1,10 @@
 import styles from "./album.module.scss";
-import album1 from "@/assets/images/album1.jpg";
-import album2 from "@/assets/images/album2.jpg";
-import album3 from "@/assets/images/album3.jpg";
-import album4 from "@/assets/images/album4.jpg";
-import album5 from "@/assets/images/album5_1.5_1.jpg";
-import album6 from "@/assets/images/album6_1.5_1.jpg";
+import album1 from "@/assets/images/album1_webp.webp";
+import album2 from "@/assets/images/album2_webp.webp";
+import album3 from "@/assets/images/album3_webp.webp";
+import album4 from "@/assets/images/album4_webp.webp";
+import album5 from "@/assets/images/album5_webp.webp";
+import album6 from "@/assets/images/album6_webp.webp";
 import Fancybox from "../UI/Fancybox";
 import clsx from "clsx";
 import Countdown from "../UI/Countdown";
@@ -43,8 +43,8 @@ export default function Album() {
             <img src={album3} alt="Album 3" loading="lazy" />
           </a>
           <div className={styles.album_item_content}>
-            <p>At this moment,</p>
-            <p>love and being loved happen at the same time</p>
+            <p>Two souls, one heart,</p>
+            <p>Every love story is beautiful, but ours is my favorite.</p>
             <p className={styles.album_content_chinese}>
               （此时此刻 爱与被爱同时发生了）
             </p>
