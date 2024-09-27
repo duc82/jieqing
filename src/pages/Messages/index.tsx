@@ -97,8 +97,6 @@ export default function Messages() {
         prevSelectedMessages.delete(id);
         return new Map(prevSelectedMessages);
       });
-
-      alert("Message deleted successfully");
     } catch (error) {
       console.log(error);
     }
@@ -118,15 +116,19 @@ export default function Messages() {
   return (
     <div className={styles.admin}>
       <h1 className={styles.admin_title}>Messages</h1>
-
-      {selectedMessages.size > 0 && (
+      <div className={styles.admin_menu}>
         <div className={styles.admin_delete}>
-          <button type="button" onClick={handleDeleteMany}>
-            Delete
-          </button>
-          <p>Selected {selectedMessages.size} records</p>
+          {selectedMessages.size > 0 && (
+            <>
+              <button type="button" onClick={handleDeleteMany}>
+                Delete
+              </button>
+              <p>Selected {selectedMessages.size} records</p>
+            </>
+          )}
         </div>
-      )}
+      </div>
+
       <div style={{ overflowX: "auto" }}>
         <table className={styles.admin_table}>
           <thead>

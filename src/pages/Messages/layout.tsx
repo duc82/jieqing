@@ -6,7 +6,7 @@ export default function MessagesLayout() {
 
   useEffect(() => {
     const password = "dengqingfang";
-    if (localStorage.getItem("password") === password) {
+    if (localStorage.getItem("jieqing_password") === password) {
       setIsCorrect(true);
       return;
     }
@@ -14,7 +14,7 @@ export default function MessagesLayout() {
       const data = prompt("Enter password");
 
       if (data === password) {
-        localStorage.setItem("password", data);
+        localStorage.setItem("jieqing_password", data);
         setIsCorrect(true);
       }
     };
@@ -26,12 +26,17 @@ export default function MessagesLayout() {
 
   if (!isCorrect) {
     return (
-      <div>
-        <h1>Access denied</h1>
-        <p>
-          You don't have permission to access this page. Please enter the
-          correct password.
-        </p>
+      <div
+        className="container"
+        style={{ display: "flex", height: "100vh", alignItems: "center" }}
+      >
+        <div>
+          <h1>Access denied</h1>
+          <p>
+            You don't have permission to access this page. Please enter the
+            correct password.
+          </p>
+        </div>
       </div>
     );
   }

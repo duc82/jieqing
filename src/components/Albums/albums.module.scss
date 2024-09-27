@@ -9,9 +9,17 @@
   .albums_title {
     text-transform: uppercase;
     font-style: italic;
-    margin-bottom: 20px;
     font-weight: 400;
-    font-size: 2.6rem;
+    font-size: 26px;
+
+    @include media-breakpoint-up($md) {
+      font-size: 32px;
+    }
+  }
+
+  .album_sub_title {
+    margin-bottom: 40px;
+    font-size: 20px;
   }
 
   .album_list {
@@ -44,6 +52,10 @@
         color: white;
         font-size: 32px;
         z-index: 1;
+
+        & > span:first-child {
+          margin-top: 10px;
+        }
 
         & + img {
           transform: scale(1);

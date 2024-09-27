@@ -24,11 +24,18 @@
     margin: 20px 0;
   }
 
-  .admin_delete {
-    margin: 20px 0;
+  .admin_menu {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
-    column-gap: 10px;
+    margin: 20px 0;
+
+    .admin_delete {
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+    }
   }
 
   .admin_table {

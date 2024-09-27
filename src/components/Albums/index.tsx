@@ -8,6 +8,15 @@ import album_6 from "@/assets/images/albums/album_6_webp.webp";
 import album_7 from "@/assets/images/albums/album_7_webp.webp";
 import album_8 from "@/assets/images/albums/album_8_webp.webp";
 import album_9 from "@/assets/images/albums/album_9_webp.webp";
+import album_10 from "@/assets/images/albums/album_10_webp.webp";
+import album_11 from "@/assets/images/albums/album_11_webp.webp";
+import album_12 from "@/assets/images/albums/album_12_webp.webp";
+import album_13 from "@/assets/images/albums/album_13_webp.webp";
+import album_14 from "@/assets/images/albums/album_14_webp.webp";
+import album_15 from "@/assets/images/albums/album_15_webp.webp";
+import album_16 from "@/assets/images/albums/album_16_webp.webp";
+import album_17 from "@/assets/images/albums/album_17_webp.webp";
+import album_18 from "@/assets/images/albums/album_18_webp.webp";
 import Fancybox from "../UI/Fancybox";
 
 export default function Albums() {
@@ -21,6 +30,15 @@ export default function Albums() {
     album_7,
     album_8,
     album_9,
+    album_10,
+    album_11,
+    album_12,
+    album_13,
+    album_14,
+    album_15,
+    album_16,
+    album_17,
+    album_18,
   ];
 
   const newAlbums = albums.slice(0, 9);
@@ -30,6 +48,7 @@ export default function Albums() {
   return (
     <section className={styles.albums}>
       <h3 className={styles.albums_title}>Albums</h3>
+      <p className={styles.album_sub_title}>专辑</p>
 
       <Fancybox className={styles.album_list}>
         {newAlbums.map((album, index) => (
@@ -40,7 +59,10 @@ export default function Albums() {
             className={styles.album_item}
           >
             {index === newAlbums.length - 1 && albums.length > 9 && (
-              <div className={styles.album_last}>+{otherAlbums.length}</div>
+              <div className={styles.album_last}>
+                <span>+</span>
+                <span>{otherAlbums.length}</span>
+              </div>
             )}
             <img src={album} alt={`album-${index}`} loading="lazy" />
           </a>
