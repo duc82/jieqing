@@ -10,7 +10,7 @@ import Message from "../components/Message";
 import { TimeProvider } from "../providers/TimeProvider";
 
 export default function App() {
-  const time = new Date("2024-11-14T08:00:00").getTime();
+  const time = new Date("2024-11-14T12:00:00").getTime();
 
   return (
     <TimeProvider time={time}>

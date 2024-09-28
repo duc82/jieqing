@@ -14,6 +14,9 @@ export default function Calendar() {
 
   const days = getDays(month, year);
 
+  // 0: Sunday, 1: Monday, 2: Tuesday, 3: Wednesday, 4: Thursday, 5: Friday, 6: Saturday
+  const firstDay = new Date(year, month - 1, 1).getDay();
+
   return (
     <section className={styles.calendar}>
       <div className={styles.calendar_overlay}></div>
@@ -42,7 +45,14 @@ export default function Calendar() {
           </div>
 
           <div className={styles.calendar_days}>
-            <div className={styles.calendar_day}></div>
+            {firstDay !== 1 && (
+              <div
+                className={styles.calendar_day}
+                style={{
+                  gridColumn: `span ${firstDay === 0 ? 6 : firstDay - 1}`,
+                }}
+              ></div>
+            )}
             {Array.from({ length: days }).map((_, index) => (
               <div
                 key={index}

@@ -25,7 +25,7 @@ export default function About() {
             Bride{" "}
             <span className={styles.about_item_icon}>&#x1f1fb;&#x1f1f3;</span>
           </p>
-          <p className="letter-normal">{"< ĐẶNG THANH PHƯƠNG >"}</p>
+          <p>{"< ĐẶNG THANH PHƯƠNG >"}</p>
         </div>
       </div>
     </section>

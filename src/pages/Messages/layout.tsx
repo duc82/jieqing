@@ -1,42 +1,38 @@
-import { useEffect, useState } from "react";
+import { FormEvent, useState } from "react";
 import { Outlet } from "react-router-dom";
 
 export default function MessagesLayout() {
-  const [isCorrect, setIsCorrect] = useState(false);
+  const passwordLocal = localStorage.getItem("jieqing_password");
+  const [isCorrect, setIsCorrect] = useState(Boolean(passwordLocal));
+  const password = "dengqingfang";
 
-  useEffect(() => {
-    const password = "dengqingfang";
-    if (localStorage.getItem("jieqing_password") === password) {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const value = e.currentTarget.password.value;
+    if (value === password) {
+      localStorage.setItem("jieqing_password", value);
       setIsCorrect(true);
       return;
     }
-    window.onload = function () {
-      const data = prompt("Enter password");
 
-      if (data === password) {
-        localStorage.setItem("jieqing_password", data);
-        setIsCorrect(true);
-      }
-    };
-
-    return () => {
-      window.onload = null;
-    };
-  }, []);
+    alert("Password is incorrect");
+  };
 
   if (!isCorrect) {
     return (
-      <div
-        className="container"
-        style={{ display: "flex", height: "100vh", alignItems: "center" }}
-      >
-        <div>
-          <h1>Access denied</h1>
-          <p>
-            You don't have permission to access this page. Please enter the
-            correct password.
-          </p>
-        </div>
+      <div className="container">
+        <form onSubmit={handleSubmit} className="messages-form">
+          <label htmlFor="password">
+            Please enter the password to access the messages
+          </label>
+          <input
+            type="password"
+            placeholder="Enter password"
+            name="password"
+            id="password"
+          />
+          <button type="submit">Submit</button>
+        </form>
       </div>
     );
   }

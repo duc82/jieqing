@@ -73,10 +73,6 @@
         .calendar_day {
           padding: 20px 0;
 
-          &:first-child {
-            grid-column: span 6 / span 6;
-          }
-
           &.active {
             position: relative;
 
@@ -88,7 +84,7 @@
             .heart_wrapper {
               position: absolute;
               top: calc(50% + 4px);
-              left: calc(50% - 1px);
+              left: 50%;
               transform: translate(-50%, -50%);
               display: flex;
 
